@@ -16,12 +16,8 @@ function App() {
 
   return (
     <>
-      <Header />
-      {/* <Navbar /> */}
+      <Navbar />
       <EmployeeForm/>
-      {/* <Welcome name = "Priyadharshini" role = "Java Full Stack Developer"/>
-      <Welcome name = "Lokesh" role = "Java Developer"/> */}
-      {/* <Counter /> */}
       <Footer />
     </>
   )

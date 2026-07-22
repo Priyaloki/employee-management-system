@@ -11,6 +11,7 @@ function EmployeeForm() {
     const [employees, setEmployees] = useState([]);
     const [editingId, setEditingId] = useState(null);
     const [search, setSearch] = useState("");
+    const [message, setMessage] = useState("");
 
     const [errors, setErrors] = useState({});
 
@@ -70,6 +71,7 @@ function EmployeeForm() {
 
             await loadEmployees();
             setEditingId(null);
+            setMessage("Employee updated successfully.");
 
         } else {
             await addEmployee({
@@ -79,6 +81,7 @@ function EmployeeForm() {
             });
 
             await loadEmployees();
+            setMessage("Employee added successfully.");
 
         }
 
@@ -101,6 +104,7 @@ function EmployeeForm() {
         await deleteEmployee(id);
 
         await loadEmployees();
+        setMessage("Employee deleted successfully.");
     }
 
     function editEmployee(employee) {
@@ -114,6 +118,17 @@ function EmployeeForm() {
         <div className="container mt-5">
             <div className="row justify-content-center">
                 <div className="col-md-8">
+                    {
+                        message && (
+
+                            <div className="alert alert-success">
+
+                                {message}
+
+                            </div>
+
+                        )
+                    }
                     <EmployeeFormFields
                         name={name}
                         setName={setName}
@@ -126,16 +141,45 @@ function EmployeeForm() {
                         errors={errors}
                     />
 
-                    <h3 className="mt-5 mb-3">Employee List</h3>
+                    <div className="card shadow-lg border-0 mt-4">
 
-                    <SearchBar search={search} setSearch={setSearch} />
+                        <div className="card-body">
 
-                    <EmployeeTable
-                        employees={employees}
-                        search={search}
-                        editEmployee={editEmployee}
-                        handleDelete={handleDelete}
-                    />
+                            <div className="d-flex justify-content-between align-items-center mb-3">
+
+                                <h3 className="mb-0">
+
+                                    Employee List
+
+                                </h3>
+
+                                <span className="badge bg-dark">
+
+                                    {employees.length} Employees
+
+                                </span>
+
+                            </div>
+
+                            <SearchBar
+                                search={search}
+                                setSearch={setSearch}
+                            />
+
+                            <div className="mt-3">
+
+                                <EmployeeTable
+                                    employees={employees}
+                                    search={search}
+                                    editEmployee={editEmployee}
+                                    handleDelete={handleDelete}
+                                />
+
+                            </div>
+
+                        </div>
+
+                    </div>
                 </div>
             </div>
         </div>

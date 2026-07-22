@@ -57,6 +57,28 @@ The application will be available at:
 http://localhost:5173
 ```
 
+## 📸 Screenshots
+
+### Add Employee
+
+![Add Employee](screenshots/add-employee.png)
+
+### Update Employee
+
+![Update Employee](screenshots/update-employee.png)
+
+### Delete Confirmation
+
+![Delete](screenshots/delete-confirmation.png)
+
+### Employee List
+
+![Employees List](screenshots/employee-list.png)
+
+### Search Employee
+
+![Search](screenshots/search-employee.png)
+
 ## 👩‍💻 Developed By
 
 **Priyadharshini**

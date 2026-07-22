@@ -15,7 +15,7 @@ function EmployeeFormFields({
         <div className="card shadow p-4">
 
             <h2 className="text-center mb-4">
-                Add Employee
+                {editingId ? "Update Employee" : "Add Employee"}
             </h2>
 
             <form onSubmit={handleSubmit}>
@@ -23,6 +23,7 @@ function EmployeeFormFields({
                 <div className="mb-3">
 
                     <label className="form-label">
+                        <i className="bi bi-person-fill me-2"></i>
                         Name
                     </label>
 
@@ -44,6 +45,7 @@ function EmployeeFormFields({
                 <div className="mb-3">
 
                     <label className="form-label">
+                        <i className="bi bi-building me-2"></i>
                         Department
                     </label>
 
@@ -66,6 +68,7 @@ function EmployeeFormFields({
                 <div className="mb-3">
 
                     <label className="form-label">
+                        <i className="bi bi-currency-rupee me-2"></i>
                         Salary
                     </label>
 
